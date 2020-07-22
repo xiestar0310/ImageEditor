@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ImageHolder
+comment0.text=\r\n\ Simple\ class\ that\ serves\ to\ be\ an\ Actor\ to\ display\ the\ image.\r\n\ \r\n\ (Revised\ 11/14\ to\ avoid\ crashing\ if\ user\ cancels\ import\ operation).\r\n\ (Edited\ by\ 12/19\ by\ Star\ Xie\ for\ increased\ functionality\ and\ image\ dragging\ capabilities)\r\n\ \r\n\ @author\ Star\ Xie\r\n\ @version\ December\ 2019\r\n
+comment1.params=fileName
+comment1.target=ImageHolder(java.lang.String)
+comment1.text=\r\n\ Construct\ an\ ImageHolder\ with\ a\ file\ name.\ If\ there\ is\ an\ error,\ \r\n\ show\ a\ blank\ GreenfootImage.\r\n\ \r\n\ @param\ fileName\ \ Name\ of\ image\ file\ to\ be\ displayed.\r\n
+comment2.params=fileName
+comment2.target=boolean\ openFile(java.lang.String)
+comment2.text=\r\n\ Attempt\ to\ open\ a\ file\ and\ assign\ it\ as\ this\ Actor's\ image\r\n\ \r\n\ @param\ fileName\ \ Name\ of\ the\ image\ file\ to\ open\ (must\ be\ in\ this\ directory)\r\n\ \r\n\ @return\ boolean\ \ True\ if\ operation\ successful,\ otherwise\ false\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act-\ do\ whatever\ the\ act\ method\ wants\ to\ do\r\n
+comment4.params=
+comment4.target=java.awt.image.BufferedImage\ getBufferedImage()
+comment4.text=\r\n\ Allows\ access\ to\ my\ awtImage\ -\ the\ backing\ data\ underneath\ the\ GreenfootImage\ class.\r\n\ \r\n\ @return\ BufferedImage\ returns\ the\ backing\ image\ for\ this\ Actor\ as\ an\ AwtImage\r\n
+numComments=5
