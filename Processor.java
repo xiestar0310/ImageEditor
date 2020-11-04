@@ -8,26 +8,26 @@ import java.util.ArrayList;
 /**
  * Processor - the class that processes images.
  * <p>
- * This class manipulated Java BufferedImages, which are effectively 2d arrays of pixels. 
+ * This class manipulated Java BufferedImages, which are effectively 2d arrays of pixels.
  * Each pixel is a single integer packed with 4 values inside it. Manipulations include, but are not
  * limited to changing pixel colours, rotations, and special filters. Additionally, manipulations
  * may be undone or redone as needed.
- * 
+ *
  * @author Star Xie
  * @version December 2019
  */
-public class Processor  
+public class Processor
 {
     static ArrayList<BufferedImage> imageList = new ArrayList<BufferedImage>(); //Stores deep copies of the image every time a change is made
 
     /**
      * Example colour altering method by Mr. Cohen. This method will
      * increase the blue value while reducing the red and green values.
-     * 
+     *
      * Demonstrates use of packagePixel() and unpackPixel() methods.
-     * 
+     *
      * @param bi                The BufferedImage (passed by reference) to change.
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage blueify (BufferedImage bi)
     {
@@ -62,24 +62,24 @@ public class Processor
 
                 //Packages up colors into corresponding pixels
                 int newColour = packagePixel (red, green, blue, alpha);
-                
+
                 //sets buffered image into corrected color palate
                 bi.setRGB (x, y, newColour);
-                
+
             }
         }
         //returns the altered greenfootimage
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
      * Increases the red value while reducing the blue and green values.
-     * 
+     *
      * Demonstrates use of packagePixel() and unpackPixel() methods.
-     * 
+     *
      * @param bi                The BufferedImage (passed by reference) to change.
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage redify (BufferedImage bi)
     {
@@ -114,7 +114,7 @@ public class Processor
 
                 //Packages up colors into corresponding pixels
                 int newColour = packagePixel (red, green, blue, alpha);
-                
+
                 //sets buffered image into corrected color palate
                 bi.setRGB (x, y, newColour);
             }
@@ -122,15 +122,15 @@ public class Processor
         //returns the altered greenfootimage
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
      * Increases the green value while reducing the red and blue values.
-     * 
+     *
      * Demonstrates use of packagePixel() and unpackPixel() methods.
-     * 
+     *
      * @param bi                The BufferedImage (passed by reference) to change.
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage greenify (BufferedImage bi)
     {
@@ -165,22 +165,22 @@ public class Processor
 
                 //Packages up colors into corresponding pixels
                 int newColour = packagePixel (red, green, blue, alpha);
-                
+
                 //sets buffered image into corrected color palate
                 bi.setRGB (x, y, newColour);
-                
+
             }
         }
         //returns the altered greenfootimage
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
-     * Color altering method to make image negative. 
-     * 
+     * Color altering method to make image negative.
+     *
      * @param bi                The BufferedImage (passed by reference) to change.
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage negativeImage (BufferedImage bi)
     {
@@ -222,14 +222,14 @@ public class Processor
         //Returns altered greenfoot image
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
-     * Color altering method to make image warmer. Method increases the red while 
+     * Color altering method to make image warmer. Method increases the red while
      * reducing the green and blue values.
-     * 
+     *
      * @param bi                The BufferedImage (passed by reference) to change.
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage warmer(BufferedImage bi)
     {
@@ -278,14 +278,14 @@ public class Processor
         //Returns altered greenfoot image
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
-     * Color altering method to make image colder. Method increases the blue while 
+     * Color altering method to make image colder. Method increases the blue while
      * decreasing green and red values.
-     * 
+     *
      * @param bi The BufferedImage (passed by reference) to change.
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage cooler (BufferedImage bi)
     {
@@ -325,16 +325,16 @@ public class Processor
         }
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
      * Increases the brightness of the provided BufferedImage
-     * 
+     *
      * @param bi                The BufferedImage that will be brightened
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage brighten(BufferedImage bi)
-    {   
+    {
          // Get image size to use in for loops
         int xSize = bi.getWidth();
         int ySize = bi.getHeight();
@@ -373,20 +373,20 @@ public class Processor
                 //Sets BufferedImage with new pixels
                 bi.setRGB (x, y, newColour);
             }
-        } 
+        }
         //Returns altered GreenfootImage
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
      * Decreases the brightness of the provided BufferedImage
-     * 
+     *
      * @param bi                The BufferedImage that will be darkened
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage darken(BufferedImage bi)
-    {   
+    {
          // Get image size to use in for loops
         int xSize = bi.getWidth();
         int ySize = bi.getHeight();
@@ -426,17 +426,17 @@ public class Processor
                 //Sets BufferedImage with newly created pixels
                 bi.setRGB (x, y, newColour);
             }
-        }    
+        }
         //Returns altered GreenfootImage
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
-     * An effect to give the image a light brown - brown tone. 
-     * 
+     * An effect to give the image a light brown - brown tone.
+     *
      * @author Antonio
      * http://stackoverflow.com/questions/5132015/how-to-convert-image-to-sepia-in-java
-     * 
+     *
      * @param bi The BufferedImage (passed by reference) to change.
      */
     public static GreenfootImage sepia (BufferedImage bi){
@@ -494,13 +494,13 @@ public class Processor
         }
         return createGreenfootImageFromBI(bi);
     }
-    
+
     /**
      * Sets the image in a grey-monotone-like filter. Takes away all color replacing it with shades
-     * 
+     *
      * @param bi                The BufferedImage that will be darkened
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage greyScale (BufferedImage bi)
     {
@@ -532,7 +532,7 @@ public class Processor
                     red=average;
                 if (green < 256)
                     green=average;
-                    
+
                 int newColour = packagePixel (red, green, blue, alpha);
                 bi.setRGB (x, y, newColour);
             }
@@ -542,10 +542,10 @@ public class Processor
 
     /**
      * Flips original image horizontally
-     * 
+     *
      * @param bi                The BufferedImage that will be darkened
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage flipHorizontal (BufferedImage bi)
     {
@@ -555,7 +555,7 @@ public class Processor
 
         // Temp image, to store pixels as we reverse everything
         BufferedImage newBi = new BufferedImage (xSize, ySize, 3);
-        
+
         //Reverses x and y indicies to change X values rather than Y values
         for (int y = 0; y < ySize; y++)
         {
@@ -573,10 +573,10 @@ public class Processor
 
     /**
      * Flips original image vertically
-     * 
+     *
      * @param bi                The BufferedImage that will be darkened
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage flipVertical(BufferedImage bi)
     {
@@ -602,10 +602,10 @@ public class Processor
 
     /**
      * Rotates image clockwise 90 degrees accordingly
-     * 
+     *
      * @param bi                The BufferedImage that will be darkened
-     * 
-     * @return GreenfootImage   The new altered image in the form of a GreenfootImage  
+     *
+     * @return GreenfootImage   The new altered image in the form of a GreenfootImage
      */
     public static GreenfootImage rotate90(BufferedImage bi)
     {
@@ -615,7 +615,7 @@ public class Processor
 
         //Temp image, to store pixels as we reverse everything
         BufferedImage newBi = new BufferedImage (ySize, xSize, 3);
-        
+
         //Get new X and Y values for rotated image
         int newX = newBi.getWidth();
         int newY = newBi.getHeight();
@@ -635,15 +635,15 @@ public class Processor
     /**
      * Takes in an rgb value - the kind that is returned from BufferedImage's
      * getRGB() method - and returns 4 integers for easy manipulation.
-     * 
+     *
      * By Jordan Cohen
      * Version 0.2
-     * 
+     *
      * @param rgbaValue The value of a single pixel as an integer, representing<br>
      *                  8 bits for red, green and blue and 8 bits for alpha:<br>
      *                  <pre>alpha   red     green   blue</pre>
      *                  <pre>00000000000000000000000000000000</pre>
-     *                  
+     *
      * @return int[4]   Array containing 4 shorter ints<br>
      *                  <pre>0       1       2       3</pre>
      *                  <pre>alpha   red     green   blue</pre>
@@ -666,14 +666,14 @@ public class Processor
     /**
      * Takes in a red, green, blue and alpha integer and uses bit-shifting
      * to package all of the data into a single integer.
-     * 
+     *
      * By Jordan Cohen
-     * 
+     *
      * @param   int red value (0-255)
      * @param   int green value (0-255)
      * @param   int blue value (0-255)
      * @param   int alpha value (0-255)
-     * 
+     *
      * @return int  Integer representing 32 bit integer pixel ready
      *              for BufferedImage
      */
@@ -682,15 +682,15 @@ public class Processor
         int newRGB = (a << 24) | (r << 16) | (g << 8) | b;
         return newRGB;
     }
-    
+
     /**
      * Creates a GreenfootImage from a BufferedImage using various interior greenfoot mechanisms
-     * 
+     *
      * By Jordan Cohen
-     * 
+     *
      * @param bi                The BufferedImage that will be darkened
-     * 
-     * @return GreenfootImage   The new image in the form of a GreenfootImage 
+     *
+     * @return GreenfootImage   The new image in the form of a GreenfootImage
      */
     public static GreenfootImage createGreenfootImageFromBI (BufferedImage newBi)
     {
